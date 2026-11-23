@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human-Sink Interaction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas class="bubbles" id="bubbles" aria-hidden="true"></canvas>
+  <main class="stage" id="stage">
+    <h1 class="title">Human-Sink Interaction</h1>
+
+    <nav aria-label="Choose day">
+      <button class="icon-button calendar-button" id="calendarButton" type="button" aria-label="Open calendar" aria-haspopup="dialog" aria-expanded="false">
+        <img src="assets/calendar.svg" alt="">
+      </button>
+      <button class="icon-button day-button day-button--prev" id="prevDay" type="button" aria-label="Previous day">
+        <img src="assets/chevron-left.svg" alt="">
+      </button>
+      <p class="day-label" id="dayLabel" aria-live="polite"></p>
+      <button class="icon-button day-button day-button--next" id="nextDay" type="button" aria-label="Next day">
+        <img src="assets/chevron-right.svg" alt="">
+      </button>
+    </nav>
+
+    <div class="calendar" id="calendar" role="dialog" aria-label="Choose a date" hidden></div>
+
+    <div role="group" aria-label="View">
+      <button class="icon-button view-button" id="viewButton" type="button" aria-label="Show all photos of this day" aria-pressed="false">
+        <span class="view-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="icon-button play-button" id="playButton" type="button" aria-label="Play this day">
+        <img class="play-button__play" src="assets/play.svg" alt="">
+        <img class="play-button__pause" src="assets/pause.svg" alt="">
+      </button>
+      <div class="speed" id="speedOptions" role="group" aria-label="Playback speed" hidden>
+        <button class="speed__option" type="button" data-speed="0.5" aria-pressed="false">0.5x</button>
+        <button class="speed__option" type="button" data-speed="1" aria-pressed="true">1x</button>
+        <button class="speed__option" type="button" data-speed="2" aria-pressed="false">2x</button>
+      </div>
+    </div>
+
+    <section class="viewer" id="viewer" aria-label="Sink photo">
+      <div class="viewer__stack" id="photoStack"></div>
+      <div class="viewer__grid" id="photoGrid" hidden></div>
+    </section>
+    <output class="time-tag" id="timeTag"></output>
+
+    <div class="timeline" id="timeline">
+      <img class="timeline__line" src="assets/timeline-line.svg" alt="">
+      <div class="timeline__hours" id="hours" aria-hidden="true"></div>
+      <div class="timeline__handle" id="handle" role="slider" tabindex="0" aria-label="Time of day" aria-valuemin="420" aria-valuemax="1320">
+        <img src="assets/hand.svg" alt="" draggable="false">
+      </div>
+    </div>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="bubbles.js"></script>
+</body>
+</html>
