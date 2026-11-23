@@ -42,5 +42,8 @@ window.SINK_DAYS = [
     { time: "14:00", src: "images/IMG_7126.jpg" },
     { time: "15:10", src: "images/IMG_7129.jpg" },
     { time: "15:34", src: "images/IMG_7130.jpg" },
+    { time: "17:59", src: "images/IMG_7132.jpg" },
+    { time: "21:26", src: "images/IMG_7140.jpg" },
+    { time: "21:33", src: "images/IMG_7141.jpg" },
   ] },
 ];

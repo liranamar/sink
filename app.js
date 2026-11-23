@@ -411,6 +411,15 @@
   prevDay.addEventListener("click", () => setDay(dayIndex - 1));
   nextDay.addEventListener("click", () => setDay(dayIndex + 1));
 
+  // Goes to the newest photo, so it keeps working after the last documented day.
+  el("todayButton").addEventListener("click", () => {
+    closeCalendar();
+    const lastIndex = DAYS.length - 1;
+    const { photos } = DAYS[lastIndex];
+    minutes = photos[photos.length - 1].minutes;
+    setDay(lastIndex);
+  });
+
   const hours = el("hours");
   for (let hour = 7; hour <= 22; hour += 1) {
     const label = document.createElement("span");

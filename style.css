@@ -94,6 +94,20 @@ html, body {
   pointer-events: none;
 }
 
+.today-button {
+  position: absolute;
+  top: 221px;
+  left: 642px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #000;
+  font: 400 24px/34px var(--serif);
+  cursor: pointer;
+}
+
+.today-button:hover { text-decoration: underline; }
+
 .view-button { top: 274.35px; left: 865.5px; width: 44px; height: 44px; }
 
 .view-icon {
@@ -348,6 +362,7 @@ html, body {
 .timeline__handle:focus { outline: none; }
 
 .icon-button:focus-visible,
+.today-button:focus-visible,
 .speed__option:focus-visible,
 .calendar__day:focus-visible,
 .thumb:focus-visible,
